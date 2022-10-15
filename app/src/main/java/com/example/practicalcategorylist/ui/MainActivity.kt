@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
        /* for (i in student_list){
             var data=StudentData()
             student_list[i].student_name

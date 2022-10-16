@@ -1,14 +1,22 @@
 package com.example.practicalcategorylist.ui
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.view.Gravity
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
+import com.church.utils.Constants
+import com.church.utils.StoreUserData
 import com.example.practicalcategorylist.R
 import com.example.practicalcategorylist.databinding.ActivityMainBinding
 import com.example.practicalcategorylist.models.StudentData
 import com.example.practicalcategorylist.retroit.RetrofitService
 import com.example.practicalcategorylist.viewmodels.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.activity_main.*
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -65,6 +73,28 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        if (StoreUserData(this).getBoolean(Constants.IS_LOGIN)) {
+            tvLogout.text = "Logout"
+
+        } else {
+            tvLogout.text = "Login"
+
+        }
+
+        ivMenu.setOnClickListener {
+            drawerLayout.openDrawer(GravityCompat.START);
+        }
+
+        llLogout.setOnClickListener {
+            if (StoreUserData(this).getBoolean(Constants.IS_LOGIN)) {
+
+                StoreUserData(this).clearData()
+                startActivity(Intent(this, LoginRegisterActivity::class.java))
+            } else{
+                Toast.makeText(this,"Please Login First",Toast.LENGTH_LONG).show()
+            }
+        }
 
 
 

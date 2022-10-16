@@ -86,6 +86,7 @@ class MainActivity : AppCompatActivity() {
             drawerLayout.openDrawer(GravityCompat.START);
         }
 
+
         llLogout.setOnClickListener {
             if (StoreUserData(this).getBoolean(Constants.IS_LOGIN)) {
 

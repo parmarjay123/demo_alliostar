@@ -1,14 +1,10 @@
 package com.example.practicalcategorylist.ui
 
-import android.content.Intent
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.practicalcategorylist.databinding.ItemCategoriesBinding
 import com.example.practicalcategorylist.models.StudentData
-import java.util.*
 
 
 class MainAdapter : RecyclerView.Adapter<MainViewHolder>() {
@@ -30,9 +26,10 @@ class MainAdapter : RecyclerView.Adapter<MainViewHolder>() {
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
         val categoriesItem = studentData[position]
 
-        holder.binding.tvStudentName.text="Student Name :- ${categoriesItem.student_name}"
-        holder.binding.tvCollageCode.text="Collage Name :- ${categoriesItem.collage_name}"
-        holder.binding.tvEnNo.text="En_No :- ${categoriesItem.en_no}"
+        holder.binding.tvStudentName.text = "Student Name :- ${categoriesItem.student_name}"
+        holder.binding.tvCollageCode.text = "Collage Name :- ${categoriesItem.collage_name}"
+        holder.binding.tvEnNo.text = "En_No :- ${categoriesItem.en_no}"
+        holder.binding.tvGrade.text = "Grade :- ${categoriesItem.grade}"
 
 
     }

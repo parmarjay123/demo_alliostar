@@ -2,10 +2,10 @@
 
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llMain"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:id="@+id/llMain">
+    android:orientation="vertical">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
@@ -26,14 +26,6 @@
                 android:layout_margin="6dp"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/ivLogo"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:adjustViewBounds="false"
-                    android:scaleType="centerCrop" />
-
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -47,8 +39,6 @@
                         android:layout_height="wrap_content"
                         android:ellipsize="end"
                         android:gravity="start"
-                        android:lines="2"
-                        android:maxLines="2"
                         android:text="StudentName :-"
                         android:textColor="@color/black"
                         android:textSize="14sp"
@@ -58,28 +48,49 @@
                         android:id="@+id/tvEnNo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
                         android:ellipsize="end"
                         android:gravity="start"
-                        android:lines="2"
-                        android:maxLines="2"
                         android:text="En.no:-"
                         android:textColor="@color/black"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/tvCollageCode"
+                    <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:gravity="start"
-                        android:lines="2"
-                        android:maxLines="2"
-                        android:text="Collage Name:-"
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:orientation="horizontal">
 
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvCollageCode"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:gravity="start"
+                            android:text="Collage Name:-"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvGrade"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:gravity="end"
+                            android:text="Grade:-"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -88,7 +99,6 @@
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>
-
 
 
     </com.google.android.material.card.MaterialCardView>

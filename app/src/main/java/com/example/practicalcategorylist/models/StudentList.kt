@@ -3,7 +3,7 @@ package com.example.practicalcategorylist.models
 import com.example.practicalcategorylist.Results
 
 data class StudentList(
-    val `data`: List<StudentData>
+    val data: List<StudentData>
     )
 
 data class StudentData(
